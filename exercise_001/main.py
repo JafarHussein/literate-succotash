@@ -9,13 +9,9 @@ while  len(username)<=0:
     print("Your username cannot be empty")
     username=input("Please provide a valid username: ")
     
-while len(username) < 12:
-    print("Your username is too short,your username should be at least 12 characters")
-    username=input("Please provide a valid username: ")
-    
-while len(username) > 12:
-    print("Your username is too long,your username should be at least 12 characters")
-    username=input("Please provide a valid username: ")
+while len(username)>12
+    print("Your username can't be more than 12 characters")
+    username=input("Please enter a valid username")
     
 while username.isalpha() == False:
     print("Your username cannot contain any spaces or digits")
