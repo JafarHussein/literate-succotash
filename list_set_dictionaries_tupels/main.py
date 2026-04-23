@@ -127,3 +127,10 @@ print(minimum_price)
 
 total_sum=sum(prices)
 print(total_sum)
+
+#Tuples
+# Tuples are very similar to list the one major difference is that tupels are not mutable
+
+courses_tuples=('History','Mathematics','Physics','Compsci')
+print(courses_tuples)
+
