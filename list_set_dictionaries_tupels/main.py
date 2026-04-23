@@ -134,3 +134,25 @@ print(total_sum)
 courses_tuples=('History','Mathematics','Physics','Compsci')
 print(courses_tuples)
 
+#Set-> an unordered collection of items where every item is unique
+set_courses={'History','Mathematics','Physics','CompSci'}
+print(set_courses)
+
+#Membership test in set
+print('Mathematics' in set_courses)
+
+#If you have to sets and want to know what are the common values they share btwn them
+art_courses={'History','CompSci','History','Art'}
+print(set_courses.intersection(art_courses))
+
+#.difference()->This shows all the items that are not in both of the sets
+#.union()->used to combine two sets
+
+#Creating an empty list
+empty_list=list()
+
+#creating a tuple
+empty_tuple=tuple()
+
+#Creating an empty set
+empty_set=set()
