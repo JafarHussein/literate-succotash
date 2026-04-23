@@ -75,3 +75,55 @@ print(courses_str)
 new_list=courses_str.split(", ")
 print(new_list)
 
+# The "Library Inventory" Challenge
+# Setup:
+# Start with this list of books:
+# books = ['Physics', 'Mathematics', 'History', 'Comp Sci']
+# The Task:
+# Write a script that performs these specific steps in order:
+# Additions: Add 'Bio' to the end of the list and 'Art' to the very beginning.
+#Adding art to the very beginning
+books=['Physics','Mathematics','History','Compsci']
+books.insert(0,'Art')
+books.append('Bio')
+print(books)
+# The Merger: You found a box of extra books: extra_books = ['Chemistry', 'French']. Add these to your books list so it stays as one single list.
+extra_books=['Chemistry','French']
+books.extend(extra_books)
+print(extra_books)
+# The Audit:
+# Find and print the index of 'Mathematics'.
+mathematics_index=books.index('Mathematics')
+print(mathematics_index)
+# Check if 'Geography' is in the list and print the True/False result.
+if 'Geography' in books:
+    print("There is a Geography book in the library")
+else:
+    print("There is no Geography book in the library")
+# Cleaning: Remove 'French' from the list using its name. Then, use .pop() to remove the very last book and print the name of the book you just removed.
+books.remove('French')
+last_book_removed=books.pop()
+print(last_book_removed)
+# Organization: Sort the list in alphabetical order, then reverse that order.
+sorted_books=sorted(books)
+print(sorted_books)
+
+books.sort(reverse=True)
+print(books)
+# The Report:
+# Turn the final list into a single string where each book is separated by a slash (/).
+books_str='/'.join(sorted_books)
+print(books_str)
+# Split that string back into a new list called final_list and print it.
+final_list=books_str.split("/")
+# Bonus (Numbers): Create a list called prices = [20, 50, 15, 40]. Print the total cost (sum) and the cheapest (min) price.
+prices = [20, 50, 15, 40]
+
+max_price=max(prices)
+print(max_price)
+
+minimum_price=min(prices)
+print(minimum_price)
+
+total_sum=sum(prices)
+print(total_sum)
