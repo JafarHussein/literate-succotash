@@ -1,34 +1,41 @@
-# Python quiz game
-questions=('How many elements are in the periodic table?: ',
-           'Which animal lays the largest eggs?: ',
-           'Which is the most abundant gas in our atmosphere',
-           'How many bones are in the human body: ',
-           'Which planet on the solar system is the hottest: ')
-options=(('A.116','B.117','C.118','D.119'),
-         ('A.Whale','B.Crocodile','C.Elephant','D.Ostrich'),
-         ('A.Nitrogen','B.Oxygen','C.Carbon dioxide','D.Sulphur'),
-         ('A.200','B.201','C.206','D.207'),
-         ('A.Mercury','B.Venus','C.Jupiter','D.Earth'))
+questions=('1.Which planet is known as the red planet',
+           '2. What is the chemical symbol for Gold',
+           '3.Which artist painted the monalisa',
+           '4. What is the capital city of australia',
+           '5. How many hearts does an octopus have')
 
-answers=('C','D','A','C','B')
+question_options=(('A. Venus', 'B. Mars', 'C. Jupiter', 'D,Saturn'),
+                  ('A. Ag','B. Fe','C. Au','D. Pb'),
+                  ('A. Leonardo da vinci','B. Vincent van Goh','C. Pablo picasso','D.Claude monet'),
+                  ('A. Sydeny', 'B.Mellbourne','C.Canberra','D.Perth'),
+                  ('A.1','B.2','C.3','D.4'))
+
+question_answers=('B','C','A','C','C')
+
 guesses=[]
+
+user_input=None
+
 question_num=0
-score=0
+
+user_score=0
+
 
 for question in questions:
-    print("**************************")
+    print('----------------------')
     print(question)
-    for option in options[question_num]:
+    for option in question_options[question_num]:
         print(option)
-    guess=input("Enter A, B, C or D").upper()
-    guesses.append(guess)
-    if guess == answers[question_num]:
-        score+=1
-        print("Correct")
+        
+    user_input=input("Choose A, B, C OR D: ").upper()
+    guesses.append(user_input)
+    if user_input == question_answers[question_num]:
+        print("Thats correct ✅")
+        user_score+=1
     else:
-        print("Incorrect")
-        print(f"The correct answer is {answers[question_num]}")
+        print("Thats wrong ❌")
+        print(f"The correct answer is {question_answers[question_num]}")
     question_num+=1
     
     
-print(f"Your score {score}")
+print(f"You score is {user_score}/{len(questions)}")
