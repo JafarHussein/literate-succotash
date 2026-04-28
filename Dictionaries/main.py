@@ -1,41 +1,35 @@
-# Dictionaries
-student={
-    'full_name':'Spongebob Squarepants',
-    'age':25,
-    'Courses':['Mathematics','Compsci']
-}
-#Getting the value of one key
-print(student['full_name'])
-print(student['courses'])
-print(student['age'])
+capitals={'USA':'Washington D.C',
+          "KENYA":"Nairobi",
+          "TANZANIA":'Dodoma',
+          "RUSSIA":'Moscow'}
 
-#Trying to access a key using the .get() method
-print(student.get('full_name'))
+# Getting one of the values
 
-#If a person tries to get acess the key that doesn't exit
-print(student.get('courses','Not found'))
+usa_capital=capitals.get("USA")
+print(usa_capital)
+#.get(key)-This method returns the value associated with a particular key, if the key is non existent it returns none
 
-#Adding a new key value pair
-student['Phone_number']='1234-5678-0912'
-print(student)
+if capitals.get("GERMANY")== None:
+    print("Germany is not located in the capitals dictionary")
+else:
+    print("That capital is located in the capitals dictionary")
+    
+#Updating a dictonary
+capitals.update({'GERMANY':'Berlin'})
+print(capitals)
 
-#Updating values using the .update() method
-student.update({'address':'Nairobi, Kenya'})
-#The update method can be used to update existing key value pairs or adding new ones
+#Removing a key from the dictionary
+capitals.pop('RUSSIA')
+print(capitals)
 
-#Deleting a property
-# del student['age']
-
-#Removing a value using .pop('key')
-
-student_age=student.pop('age')
-
-#Looping through all the values of a dictionary
-
-#.keys()->This returns all the keys available in the dictionary
-#.values()->This returns all the values available in the dictionary
-#.items()->This returns key value pairs
-
-for key, value in student.items():
-    print(key, value)
-
+#.popitem()->This removes the last key, value pair in the dictionary
+#.clear()->This removes everything from the dictionary
+#.keys()->This returns all the keys without the values
+for keys in capitals.keys():
+    print(keys)
+#.values()->This returns all the values without the key
+for value in capitals.values():
+    print(value)
+    
+for key, value in capitals.items():
+    print(f"{key}->{value}")
