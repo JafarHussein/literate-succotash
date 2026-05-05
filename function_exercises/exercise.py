@@ -102,4 +102,46 @@ def temperature_conveter():
         
 temperature_conveter()
     
-    
+# Multiplier , a function that takes two numbers and multiplies them and returns the output
+
+def multiplier(x,y):
+    z=None
+    if x < 0:
+        print(f"{x} should be positive")
+    elif y<0:
+        print(f"{y} should be positive")
+    else:
+        z= x * y
+        print(f"{x} multiplied by {y} is {z}")
+
+multiplier(10,9)
+
+# A very simple calculator builded in py
+
+def operation(operand_1, operand_2, operator):
+    output=None
+    match operator:
+        case '+':
+            output=operand_1 + operand_2
+            print(f"{operand_1} + {operand_2} = {output}")
+        case '-':
+            output=operand_1 - operand_2
+            print(f"{operand_1} - {operand_2} = {output}")
+        case '*':
+            output=operand_1 * operand_2
+            print(f"{operand_1} * {operand_2} = {output}")
+        case '/':
+            output=operand_1 / operand_2
+            print(f"{operand_1} / {operand_2} = {output}")
+        case '**':
+            output=operand_1 ** operand_2
+            print(f"{operand_1} ** {operand_2} = {output}")
+        case '%':
+            output=operand_1 % operand_2
+            print(f"{operand_1} % {operand_2} = {output}")
+        case _:
+            print("SYNTAX ERROR")
+            print("Please check the operands and the operator order")
+            
+operation(10,20,'*')
+        
