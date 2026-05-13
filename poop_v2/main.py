@@ -21,6 +21,15 @@ class Employee:
     def calculate_raise(self):
        salary_raise=self.pay + (self.pay * Employee.raise_amount)
        return f"${salary_raise:.2f}"
+    @classmethod
+    def set_raise_amount(cls,amount):
+        cls.raise_amount=amount
+    @classmethod
+    def from_string(cls,employee_str):
+        name,pay,email,actions=employee_str.split('-')
+        return cls(name,pay,email,actions)
+    
+       
         
         
         
@@ -48,5 +57,7 @@ print(employee_1.calculate_raise())
 # Class variables : Variables that are shared among all the instances of a class
 
 #class methods and static methods
+Employee.set_raise_amount(1.05)
+print(Employee.raise_amount)
 
 
