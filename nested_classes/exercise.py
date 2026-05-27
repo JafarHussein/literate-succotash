@@ -82,4 +82,24 @@ warehouse=Warehouse()
 item_list=warehouse.add_items("Toothbrush")
 print(item_list)
     
-    
+#Exercise 6
+# 6. Create a Config class with a nested Defaults class that has timeout = 30 and retries = 3. Config.__init__ should accept optional timeout and retries arguments, falling back to the Defaults values if not provided.
+
+class Config:
+    class Defaults:
+        timeout=30
+        retries=3
+        def __init__(self, timeout, retries):
+            if timeout == None:
+                timeout=Config.Defaults.timeout
+            else:
+                self.timeout=timeout
+                
+            if retries == None:
+                retries=Config.Defaults.retries
+            else:
+                self.retries=retries
+                
+                
+                
+            
