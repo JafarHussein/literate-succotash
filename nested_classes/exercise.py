@@ -19,20 +19,33 @@
 
 # 2. Create a School class with a nested Student class. Add a class variable count to Student that increments every time a new student is created. After making 3 students, print Student.count.
 
-class School:
-    class Student:
-        student_count=0
-        def __init__(self, name):
-            self.name=name
-            School.Student.student_count+=1
+# class School:
+#     class Student:
+#         student_count=0
+#         def __init__(self, name):
+#             self.name=name
+#             School.Student.student_count+=1
             
             
-student1=School.Student("Spongebob squarepants")
-students2=School.Student("Patrick Star")
-students3=School.Student("Sandy Cheeks")
-print(School.Student.student_count)
-            
+# student1=School.Student("Spongebob squarepants")
+# students2=School.Student("Patrick Star")
+# students3=School.Student("Sandy Cheeks")
+# print(School.Student.student_count)
+
+
+#exercise 3
+#  Create a Car class with a nested Engine class. When a Car is created, it should automatically create an Engine instance stored as self.engine. Engine has a start() method returning "Vroom". Print my_car.engine.start().
+
+# class Car:
+#     class Engine:
+#         def start(self):
+#             return "Vroom"
+#     def __init__(self, engine):
+#         self.engine=Car.Engine()
         
+# my_car=Car("Random Engine")
+# print(my_car.engine.start())
+
         
         
     
