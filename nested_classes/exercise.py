@@ -65,4 +65,21 @@
 
 
 #Exercise 5
+# 5. Create a Warehouse class with a nested Item class. Add an add_item(name) method to Warehouse that creates and returns an Item. A lot of beginners write return Item(name) inside the method — why does that fail? Fix it.
+
+class Warehouse:
+    warehouse_items=[]
+    class Item:
+        def __init__(self, name):
+            self.name=name
+    def add_items(self, name):
+        new_item=Warehouse.Item(name)
+        Warehouse.warehouse_items.append(new_item)
+        return [ item.name for item in Warehouse.warehouse_items]
+    
+    
+warehouse=Warehouse()
+item_list=warehouse.add_items("Toothbrush")
+print(item_list)
+    
     
