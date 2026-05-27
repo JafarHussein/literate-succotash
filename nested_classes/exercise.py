@@ -67,38 +67,59 @@
 #Exercise 5
 # 5. Create a Warehouse class with a nested Item class. Add an add_item(name) method to Warehouse that creates and returns an Item. A lot of beginners write return Item(name) inside the method — why does that fail? Fix it.
 
-class Warehouse:
-    warehouse_items=[]
-    class Item:
-        def __init__(self, name):
-            self.name=name
-    def add_items(self, name):
-        new_item=Warehouse.Item(name)
-        Warehouse.warehouse_items.append(new_item)
-        return [ item.name for item in Warehouse.warehouse_items]
+# class Warehouse:
+#     warehouse_items=[]
+#     class Item:
+#         def __init__(self, name):
+#             self.name=name
+#     def add_items(self, name):
+#         new_item=Warehouse.Item(name)
+#         Warehouse.warehouse_items.append(new_item)
+#         return [ item.name for item in Warehouse.warehouse_items]
     
     
-warehouse=Warehouse()
-item_list=warehouse.add_items("Toothbrush")
-print(item_list)
+# warehouse=Warehouse()
+# item_list=warehouse.add_items("Toothbrush")
+# print(item_list)
     
 #Exercise 6
 # 6. Create a Config class with a nested Defaults class that has timeout = 30 and retries = 3. Config.__init__ should accept optional timeout and retries arguments, falling back to the Defaults values if not provided.
 
-class Config:
-    class Defaults:
-        timeout=30
-        retries=3
-        def __init__(self, timeout, retries):
-            if timeout == None:
-                timeout=Config.Defaults.timeout
-            else:
-                self.timeout=timeout
+# class Config:
+#     class Defaults:
+#         timeout=30
+#         retries=3
+#         def __init__(self, timeout, retries):
+#             if timeout == None:
+#                 timeout=Config.Defaults.timeout
+#             else:
+#                 self.timeout=timeout
                 
-            if retries == None:
-                retries=Config.Defaults.retries
-            else:
-                self.retries=retries
+#             if retries == None:
+#                 retries=Config.Defaults.retries
+#             else:
+#                 self.retries=retries
+
+
+#Exercise 7
+# Create a Matrix class with a nested Row class. Each Row holds a list of numbers and has a sum() method. Matrix takes a 2D list, stores each row as a Row object, and has a total() method that returns the sum of all rows combined.
+
+
+#Exercise 8
+#  Create a Department class with a nested Employee class. Employee.__init__ should take a name and a department name explicitly (not by automatic reference to the outer class — prove you understand that nested classes don't magically access the outer instance). Print "Alice works in Engineering".
+
+class Department:
+    class Employee:
+        def __init__(self, name, department):
+            self.name=name
+            self.department=department
+        def get_details(self):
+            return f"{self.name} works in  the {self.department}"
+        
+        
+employee1=Department.Employee("Spongebob Squarepants","Kitchen")
+print(employee1.get_details())
+        
                 
                 
                 
