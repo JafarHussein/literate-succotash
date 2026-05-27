@@ -49,5 +49,20 @@
         
         
     
-        
+#Exercise 4
+# class Outer:
+#     class Inner:
+#         val = 10
+#     def double(self):
+#         return Outer.Inner.val * 2
+
+# o = Outer()
+# print(o.double())
+# Outer.Inner.val = 7
+# print(o.double())
+
+# o is an instance of the class Outter, in the firt initial code inner has a class variable called val which has 10 assigned to it, so the when the double method is called and printed it prints 20, the val is reassigned to 7 and the double value is called and print, the output is 14
+
+
+#Exercise 5
     
