@@ -108,19 +108,48 @@
 #Exercise 8
 #  Create a Department class with a nested Employee class. Employee.__init__ should take a name and a department name explicitly (not by automatic reference to the outer class — prove you understand that nested classes don't magically access the outer instance). Print "Alice works in Engineering".
 
-class Department:
-    class Employee:
-        def __init__(self, name, department):
-            self.name=name
-            self.department=department
-        def get_details(self):
-            return f"{self.name} works in  the {self.department}"
+# class Department:
+#     class Employee:
+#         def __init__(self, name, department):
+#             self.name=name
+#             self.department=department
+#         def get_details(self):
+#             return f"{self.name} works in  the {self.department}"
         
         
-employee1=Department.Employee("Spongebob Squarepants","Kitchen")
-print(employee1.get_details())
-        
-                
-                
-                
+# employee1=Department.Employee("Spongebob Squarepants","Kitchen")
+# print(employee1.get_details())
+
+
+#Exercise 9
+# 9. Create a Logger class with a nested Entry class. Each entry has a message and a level ("INFO", "WARNING", "ERROR"). Logger keeps a list of entries and has a get_errors() method that uses a list comprehension to return only error messages.
+
+class Logger:
+    list_entries=[]
+    class Entries:
+        entries_dictionary={"ERROR":[],
+                            "INFO":[],
+                            "WARNING":[]}
+        def __init__(self, level, message):
+            self.level=level
+            self.message=message
             
+            if self.level in Logger.Entries.entries_dictionary:
+                Logger.Entries.entries_dictionary[self.level].append(self.message)
+            else:
+                Logger.Entries.entries_dictionary[self.level]=[self.message]
+                
+    def get_errors(self):
+        
+        errors=Logger.Entries.entries_dictionary.get('ERROR',[])
+        
+        Logger.list_entries.extend(errors)
+        
+        return [error for error in Logger.list_entries]
+    
+    
+logger=Logger()
+entry1=Logger.Entries("ERROR","We were unable to authenticate you please try again")
+entry2=Logger.Entries("INFO",'We will be updating our servers at 0000EAT')
+
+print(logger.get_errors())
