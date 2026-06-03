@@ -124,32 +124,49 @@
 #Exercise 9
 # 9. Create a Logger class with a nested Entry class. Each entry has a message and a level ("INFO", "WARNING", "ERROR"). Logger keeps a list of entries and has a get_errors() method that uses a list comprehension to return only error messages.
 
-class Logger:
-    list_entries=[]
-    class Entries:
-        entries_dictionary={"ERROR":[],
-                            "INFO":[],
-                            "WARNING":[]}
-        def __init__(self, level, message):
-            self.level=level
-            self.message=message
+# class Logger:
+#     list_entries=[]
+#     class Entries:
+#         entries_dictionary={"ERROR":[],
+#                             "INFO":[],
+#                             "WARNING":[]}
+#         def __init__(self, level, message):
+#             self.level=level
+#             self.message=message
             
-            if self.level in Logger.Entries.entries_dictionary:
-                Logger.Entries.entries_dictionary[self.level].append(self.message)
-            else:
-                Logger.Entries.entries_dictionary[self.level]=[self.message]
+#             if self.level in Logger.Entries.entries_dictionary:
+#                 Logger.Entries.entries_dictionary[self.level].append(self.message)
+#             else:
+#                 Logger.Entries.entries_dictionary[self.level]=[self.message]
                 
-    def get_errors(self):
+#     def get_errors(self):
         
-        errors=Logger.Entries.entries_dictionary.get('ERROR',[])
+#         errors=Logger.Entries.entries_dictionary.get('ERROR',[])
         
-        Logger.list_entries.extend(errors)
+#         Logger.list_entries.extend(errors)
         
-        return [error for error in Logger.list_entries]
+#         return [error for error in Logger.list_entries]
     
     
-logger=Logger()
-entry1=Logger.Entries("ERROR","We were unable to authenticate you please try again")
-entry2=Logger.Entries("INFO",'We will be updating our servers at 0000EAT')
+# logger=Logger()
+# entry1=Logger.Entries("ERROR","We were unable to authenticate you please try again")
+# entry2=Logger.Entries("INFO",'We will be updating our servers at 0000EAT')
 
-print(logger.get_errors())
+# print(logger.get_errors())
+
+
+#exercise 10
+# 10. This one tests inheritance + nested classes together. Create a Vehicle class with a nested Specs class where wheels = 4. Create a Bike class that inherits from Vehicle but has its own nested Specs where wheels = 2. Print Vehicle.Specs.wheels and Bike.Specs.wheels. Then explain: does Bike inherit Vehicle.Specs?
+
+class Vehicle:
+    class Specs:
+        wheels=4
+        
+        
+class Bike(Vehicle):
+    class Specs:
+        wheels=2
+        
+        
+print(Vehicle.Specs.wheels)
+print(Vehicle.Specs.wheels)
