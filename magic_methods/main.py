@@ -14,6 +14,20 @@ class Book:
     def __eq__(self, other):
         return self.title == other.title and self.author == other.author
     
+    def __getItem__(self, key):
+        
+        if key == 'Title':
+            return self.title
+        
+        elif key == 'Author':
+            return self.author
+        
+        elif key == 'Num_pages':
+            return self.number_of_pages
+        
+        else:
+            return "Internal Error"
+    
     
     
 book1=Book("The Hobbit","J.R.R. Tolkien", 310)
