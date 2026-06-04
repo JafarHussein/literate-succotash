@@ -1,11 +1,13 @@
+# Detecting a file in py
 import os
-#Relative file paths
-file_path="test.txt"
+
+file_path='file_detection\test.txt'
+
 if os.path.exists(file_path):
-    print("The file is there")
-    if os.path.isfile(file_path):
-        print("That is a file")
-    elif os.path.isdir():
-        print("That is a directory")
-else:
-    print("I can't find that file")
+    print("The file exists")
+elif os.path.isdir(file_path):
+    print("This is a directory")
+
+#You need to this programme in the current directory
+
+
