@@ -55,4 +55,6 @@ with open(r'test.txt','r') as file_read, open(r'test3.txt','w') as file_write:
 
 with open(r'test3.txt','a') as file:
     file.write("We append this line as the last thing on the test3.txt file ")
-        
+    
+with open(r'test4.txt', 'w') as file:
+    file.write("Hello world , testing if i remember how to write on a file")
