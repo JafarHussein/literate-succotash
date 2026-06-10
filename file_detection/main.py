@@ -1,13 +1,27 @@
-# Detecting a file in py
+# File detection using py
 import os
 
-file_path='file_detection\test.txt'
+# Creating a file path that leads to that file we trying to detect
+
+file_path='test.txt'
 
 if os.path.exists(file_path):
     print("The file exists")
-elif os.path.isdir(file_path):
+else:
+    print("That file doesn't exist")
+    
+    
+#Checking if the file is a file or a directory
+
+if os.path.isfile(file_path):
+    print("This is a file")
+else:
+    print("This is not a file")
+    
+
+#Checking if its a directory
+
+if os.path.isdir(file_path):
     print("This is a directory")
-
-#You need to this programme in the current directory
-
-
+else:
+    print("This is not a directory")
