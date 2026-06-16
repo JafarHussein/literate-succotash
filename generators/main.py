@@ -28,3 +28,6 @@ while True:
         print(next(squared_numbers))
     except StopIteration:
         break
+    
+    
+#Generator expressions-Similiar to a list compression but used () instead of []
